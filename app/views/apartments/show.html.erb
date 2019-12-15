@@ -1,0 +1,64 @@
+<h1 align="center">Showing selected apartment</h1>
+
+<div class="container-fluid">
+  <p align="center">ID of apartment: <%= @apartment.id %></p>
+  <p align="center">Numbers of rooms: <%= @apartment.num_rooms %></p>
+  <p align="center">Created at: <%= @apartment.created_at %></p>
+  <p align="center">Last updated: <%= @apartment.updated_at %></p>
+</div>
+<p>*****************************************************************************</p>
+<div class="container-fluid">
+  <h2 align="center">Bookings period</h2>
+  <% @bookings = Booking.all %>
+  <table>
+    <tr>
+      <th>Id of apartment</th>
+      <th>Begin</th>
+      <th>End</th>
+    </tr>
+    <% @bookings.each do |booking| %>
+      <% if @apartment.id == booking.apartment_id %>
+        <tr>
+          <td align="center"><%= booking.apartment_id %></td>
+          <td align="center"><%= booking.start_date %></td>
+          <td align="center"><%= booking.end_date %></td>
+          <td><%= link_to 'Edit', edit_booking_path(booking.apartment_id) %></td>
+          <td><%= link_to 'Show', booking_path(booking) %></td>
+        </tr>
+      <% end %>
+      </table>
+    <% end %>
+
+    </div>
+
+<p>*****************************************************************************</p>
+<div class="container-fluid">
+  <h2 align="center">Reservations period</h2>
+  <% @reservations = Reservation.all %>
+  <table>
+    <tr>
+      <th>Id of apartment</th>
+<th>Begin</th>
+<th>End</th>
+</tr>
+<% @reservations.each do |reservation| %>
+  <% if @apartment.id == reservation.apartment_id %>
+    <tr>
+      <td align="center"><%= reservation.apartment_id %></td>
+      <td align="center"><%= reservation.start_date %></td>
+      <td align="center"><%= reservation.end_date %></td>
+      <td><%= link_to 'Edit', edit_reservation_path(reservation.apartment_id) %></td>
+      <td><%= link_to 'Show', reservation_path(reservation) %></td>
+    </tr>
+  <% end %>
+  </table>
+<% end %>
+    </div>
+
+
+<div class="container-fluid" align="center">
+  <%= link_to "Edit this apartment", edit_apartment_path(@apartment) %> |
+  <%= link_to "Back to apartments listing", apartments_path %> |
+  <%= link_to "Make a booking for this apartment", new_booking_path %> |
+  <%= link_to "Make a reservation for this apartment", new_reservation_path %>
+</div>

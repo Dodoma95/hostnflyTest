@@ -1,0 +1,58 @@
+[
+  {
+    "id": "1",
+    "apartment_id": "1",
+    "mission_type": "first_checkin",
+    "price": "20",
+    "date": "2016-10-10"
+  },
+  {
+    "id": "2",
+    "apartment_id": "1",
+    "mission_type": "last_checkout",
+    "price": "10",
+    "date": "2016-10-15"
+  },
+  {
+    "id": "3",
+    "apartment_id": "1",
+    "mission_type": "first_checkin",
+    "price": "20",
+    "date": "2016-10-16"
+  },
+  {
+    "id": "4",
+    "apartment_id": "1",
+    "mission_type": "last_checkout",
+    "price": "10",
+    "date": "2016-10-20"
+  },
+  {
+    "id": "5",
+    "apartment_id": "1",
+    "mission_type": "checkout_checkin",
+    "price": "20",
+    "date": "2016-10-13"
+  },
+  {
+    "id": "6",
+    "apartment_id": "2",
+    "mission_type": "first_checkin",
+    "price": "10",
+    "date": "2016-10-15"
+  },
+  {
+    "id": "7",
+    "apartment_id": "2",
+    "mission_type": "last_checkout",
+    "price": "5",
+    "date": "2016-10-20"
+  },
+  {
+    "id": "8",
+    "apartment_id": "2",
+    "mission_type": "checkout_checkin",
+    "price": "10",
+    "date": "2016-10-18"
+  }
+]

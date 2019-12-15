@@ -1,0 +1,28 @@
+<%= render "shared/errors", obj: @booking%>
+
+
+<div class="row">
+  <div class="col-md-12">
+    <%= form_for(@booking, :html => {class: "form-horizontal text-center", role: "form"}) do |a| %>
+    <div>
+      <%= a.label :start_date %>
+      <%= a.date_select :start_date %>
+    </div>
+
+      <div>
+    <%= a.label :end_date %>
+    <%= a.date_select :end_date %>
+      </div>
+
+      <div>
+    <%= a.label :apartment_id %>
+    <%= a.text_field :apartment_id %>
+      </div>
+  <div class="actions">
+    <%= a.submit %>
+  </div>
+
+<% end %>
+
+  </div>
+</div>

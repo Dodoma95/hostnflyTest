@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Missions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Mission type</th>
+      <th>Date</th>
+      <th>Price</th>
+      <th>Apartment</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <% @missions = Mission.all %>
+
+  <tbody>
+    <% @missions.each do |mission| %>
+      <tr>
+        <td><%= mission.mission_type %></td>
+        <td><%= mission.date %></td>
+        <td><%= mission.price %></td>
+        <td><%= mission.apartment_id %></td>
+        <td><%= link_to 'Show', mission %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to "Back to apartments listing", apartments_path %>

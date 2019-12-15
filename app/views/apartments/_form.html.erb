@@ -1,0 +1,21 @@
+<%= render "shared/errors", obj: @apartment%>
+
+<div class="row">
+  <div class="col-md-12">
+    <%= form_for(@apartment, :html => {class: "form-horizontal text-center", role: "form"}) do |a| %>
+        <div>
+          <%= a.label :"Numbers of rooms :" %><br/>
+        </div>
+        <div>
+          <%= a. number_field :num_rooms, class: "form_control", placeholder: "Numbers of rooms", autofocus: true %>
+      </div>
+        <div>
+          <%= a.submit class: "btn btn-primary"%>
+        </div>
+
+    <% end %>
+    <div align="center">
+      [ <%= link_to "Cancel request and return to apartments listing", apartments_path %> ]
+    </div>
+  </div>
+</div>
